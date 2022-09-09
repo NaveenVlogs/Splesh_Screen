@@ -1,0 +1,26 @@
+ private static int SPLASH_SCREEN_TIME_OUT=5000;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splesh);
+
+       ImageView imageview = findViewById(R.id.splesh_img);
+      ImageView  imageview1 = findViewById(R.id.splesh_img2);
+
+        Glide.with(this).load(R.raw.run11).into(imageview);
+        Glide.with(this).load(R.raw.loading1).into(imageview1);
+
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(),SignUpActivity.class);
+                startActivity(intent);
+            }
+        },SPLASH_SCREEN_TIME_OUT);
+
+
+(and paste the all gif in the src menu row file) 
+
